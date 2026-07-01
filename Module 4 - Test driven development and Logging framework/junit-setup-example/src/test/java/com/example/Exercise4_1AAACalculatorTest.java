@@ -4,7 +4,7 @@ import org.junit.Before;
 import org.junit.After;
 import static org.junit.Assert.assertEquals;
 
-public class Exercise4AAACalculatorTest {
+public class Exercise4_1AAACalculatorTest {
 
     private Calculator calc;
 

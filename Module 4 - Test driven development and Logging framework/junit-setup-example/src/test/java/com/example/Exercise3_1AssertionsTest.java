@@ -2,7 +2,7 @@ package com.example;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-public class Exercise3AssertionsTest {
+public class Exercise3_1AssertionsTest {
     @Test
     public void testAssertions(){
 
