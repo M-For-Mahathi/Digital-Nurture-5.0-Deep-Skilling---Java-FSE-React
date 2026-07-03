@@ -6,20 +6,32 @@
        http://www.springframework.org/schema/beans
        https://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <!-- Exercise 1:
-         Create BookRepository Bean -->
+    <!-- Exercise 1 -->
     <bean id="bookRepository"
           class="com.example.BookRepository"/>
 
-    <!-- Exercise 1:
-         Create BookService Bean -->
-    <!-- Exercise 2:
-         Inject BookRepository into BookService -->
+    <!-- Exercise 2 & Exercise 5 -->
     <bean id="bookService"
           class="com.example.BookService">
 
         <property name="bookRepository"
                   ref="bookRepository"/>
+
+    </bean>
+
+    <!-- Exercise 7 -->
+    <bean id="bookRepository"
+      class="com.example.BookRepository"/>
+
+    <bean id="bookService"
+        class="com.example.BookService">
+
+        <!-- Constructor Injection -->
+        <constructor-arg ref="bookRepository"/>
+
+        <!-- Setter Injection -->
+        <property name="bookRepository"
+                ref="bookRepository"/>
 
     </bean>
 
