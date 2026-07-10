@@ -1,4 +1,4 @@
-// Hands on 1
+// 1. Hands on 1
 package com.spring.orm.model;
 
 import jakarta.persistence.Column;

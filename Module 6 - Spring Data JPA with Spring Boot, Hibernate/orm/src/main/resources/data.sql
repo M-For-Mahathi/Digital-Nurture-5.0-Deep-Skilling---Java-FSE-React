@@ -1,4 +1,4 @@
--- Hands on 5
+-- 1. Hands on 5
 insert into country (co_code, co_name) values ('AF', 'Afghanistan');
 insert into country (co_code, co_name) values ('AL', 'Albania');
 insert into country (co_code, co_name) values ('DZ', 'Algeria');
@@ -247,3 +247,63 @@ insert into country (co_code, co_name) values ('EH', 'Western Sahara');
 insert into country (co_code, co_name) values ('YE', 'Yemen');
 insert into country (co_code, co_name) values ('ZM', 'Zambia');
 insert into country (co_code, co_name) values ('ZW', 'Zimbabwe');
+
+-- 2. Hands on 2
+insert into stock (st_code, st_date, st_open, st_close, st_volume) values ('FB', '2019-09-03', 185.84, 182.04, 12614226);
+insert into stock (st_code, st_date, st_open, st_close, st_volume) values ('FB', '2019-09-04', 180.51, 177.63, 9719583);
+insert into stock (st_code, st_date, st_open, st_close, st_volume) values ('FB', '2019-09-05', 178.69, 181.83, 9458591);
+insert into stock (st_code, st_date, st_open, st_close, st_volume) values ('FB', '2019-09-06', 182.37, 178.62, 9571945);
+insert into stock (st_code, st_date, st_open, st_close, st_volume) values ('FB', '2019-09-09', 176.93, 176.97, 8445199);
+insert into stock (st_code, st_date, st_open, st_close, st_volume) values ('FB', '2019-09-10', 177.34, 179.07, 17142600);
+insert into stock (st_code, st_date, st_open, st_close, st_volume) values ('FB', '2019-09-11', 178.59, 178.18, 12667265);
+insert into stock (st_code, st_date, st_open, st_close, st_volume) values ('FB', '2019-09-12', 180.04, 176.09, 10678638);
+insert into stock (st_code, st_date, st_open, st_close, st_volume) values ('FB', '2019-09-13', 177.28, 176.0, 10608513);
+insert into stock (st_code, st_date, st_open, st_close, st_volume) values ('FB', '2019-09-16', 174.29, 176.4, 9714803);
+insert into stock (st_code, st_date, st_open, st_close, st_volume) values ('FB', '2019-09-17', 173.96, 170.73, 13770619);
+insert into stock (st_code, st_date, st_open, st_close, st_volume) values ('FB', '2019-09-18', 171.35, 173.81, 15707870);
+insert into stock (st_code, st_date, st_open, st_close, st_volume) values ('FB', '2019-09-19', 174.03, 177.81, 14350753);
+insert into stock (st_code, st_date, st_open, st_close, st_volume) values ('FB', '2019-09-20', 175.28, 173.63, 18546825);
+insert into stock (st_code, st_date, st_open, st_close, st_volume) values ('FB', '2019-09-23', 174.34, 177.23, 17686361);
+insert into stock (st_code, st_date, st_open, st_close, st_volume) values ('FB', '2019-09-24', 175.38, 171.94, 11823498);
+insert into stock (st_code, st_date, st_open, st_close, st_volume) values ('FB', '2019-09-25', 173.58, 177.46, 11905582);
+insert into stock (st_code, st_date, st_open, st_close, st_volume) values ('FB', '2019-09-26', 179.66, 178.7, 15606962);
+insert into stock (st_code, st_date, st_open, st_close, st_volume) values ('FB', '2019-09-27', 179.51, 178.43, 14210606);
+insert into stock (st_code, st_date, st_open, st_close, st_volume) values ('GOOGL', '2019-04-22', 1236.67, 1253.76, 2390113);
+insert into stock (st_code, st_date, st_open, st_close, st_volume) values ('GOOGL', '2019-04-23', 1256.64, 1270.59, 1778736);
+insert into stock (st_code, st_date, st_open, st_close, st_volume) values ('GOOGL', '2019-04-24', 1270.59, 1260.05, 2019786);
+insert into stock (st_code, st_date, st_open, st_close, st_volume) values ('GOOGL', '2019-04-25', 1270.3, 1267.34, 3618057);
+insert into stock (st_code, st_date, st_open, st_close, st_volume) values ('GOOGL', '2019-04-26', 1273.38, 1277.42, 1199483);
+insert into stock (st_code, st_date, st_open, st_close, st_volume) values ('GOOGL', '2019-04-29', 1280.51, 1296.2, 3454880);
+insert into stock (st_code, st_date, st_open, st_close, st_volume) values ('GOOGL', '2019-10-17', 1251.4, 1252.8, 3563291);
+insert into stock (st_code, st_date, st_open, st_close, st_volume) values ('GOOGL', '2019-05-01', 1122.25, 1126.83, 1242679);
+insert into stock (st_code, st_date, st_open, st_close, st_volume) values ('GOOGL', '2019-05-02', 1160.09, 1155.49, 1360566);
+insert into stock (st_code, st_date, st_open, st_close, st_volume) values ('GOOGL', '2019-05-03', 1189.0, 1195.86, 1017310);
+insert into stock (st_code, st_date, st_open, st_close, st_volume) values ('FB', '2019-01-31', 165.6, 166.69, 77233600);
+insert into stock (st_code, st_date, st_open, st_close, st_volume) values ('FB', '2018-10-31', 155.0, 151.79, 60101300);
+insert into stock (st_code, st_date, st_open, st_close, st_volume) values ('FB', '2018-12-19', 141.21, 133.24, 57404900);
+insert into stock (st_code, st_date, st_open, st_close, st_volume) values ('NFLX', '2018-12-24', 242.0, 233.88, 9547600);
+insert into stock (st_code, st_date, st_open, st_close, st_volume) values ('NFLX', '2018-12-21', 263.83, 246.39, 21397600);
+insert into stock (st_code, st_date, st_open, st_close, st_volume) values ('NFLX', '2018-12-26', 233.92, 253.67, 14402700);
+insert into stock (st_code, st_date, st_open, st_close, st_volume) values ('NFLX', '2019-06-10', 349.16, 339.8, 6646211);
+insert into stock (st_code, st_date, st_open, st_close, st_volume) values ('NFLX', '2019-06-11', 356.05, 347.37, 8757851);
+insert into stock (st_code, st_date, st_open, st_close, st_volume) values ('NFLX', '2019-06-12', 375.05, 371.34, 8187855);
+
+-- 2. Hands on 3
+insert into department (dp_name) values ('Engineering');
+insert into department (dp_name) values ('Human Resources');
+insert into department (dp_name) values ('Finance');
+
+insert into skill (sk_name) values ('Java');
+insert into skill (sk_name) values ('SQL');
+insert into skill (sk_name) values ('Communication');
+insert into skill (sk_name) values ('Python');
+
+insert into employee (em_name, em_salary, em_permanent, em_date_of_birth, em_dp_id) values ('Ravi Kumar', 75000, true, '1995-04-12', 1);
+insert into employee (em_name, em_salary, em_permanent, em_date_of_birth, em_dp_id) values ('Sneha Reddy', 68000, true, '1997-08-23', 1);
+insert into employee (em_name, em_salary, em_permanent, em_date_of_birth, em_dp_id) values ('Arjun Rao', 55000, false, '1999-01-05', 2);
+insert into employee (em_name, em_salary, em_permanent, em_date_of_birth, em_dp_id) values ('Priya Sharma', 82000, true, '1993-11-30', 3);
+
+-- 2. Hands on 6
+insert into employee_skill (es_em_id, es_sk_id) values (1, 1);
+insert into employee_skill (es_em_id, es_sk_id) values (1, 2);
+insert into employee_skill (es_em_id, es_sk_id) values (2, 3);

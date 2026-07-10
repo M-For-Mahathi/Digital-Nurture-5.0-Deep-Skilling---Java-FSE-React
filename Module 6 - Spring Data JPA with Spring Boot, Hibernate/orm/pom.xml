@@ -30,7 +30,7 @@
 		<java.version>21</java.version>
 	</properties>
 
-	<!-- Hands on 1 -->
+	<!-- 1. Hands on 1 -->
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

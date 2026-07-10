@@ -1,4 +1,4 @@
-// Hands on 6
+// 1. Hands on 6
 package com.spring.orm.service.exception;
 
 public class CountryNotFoundException extends Exception {

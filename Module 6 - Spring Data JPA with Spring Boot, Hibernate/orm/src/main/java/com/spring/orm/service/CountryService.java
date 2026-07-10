@@ -17,13 +17,13 @@ public class CountryService {
     @Autowired
     private CountryRepository countryRepository;
 
-    // Hands on 1
+    // 1. Hands on 1
     @Transactional
     public List<Country> getAllCountries() {
         return countryRepository.findAll();
     }
 
-    // Hands on 6
+    // 1. Hands on 6
     @Transactional
     public Country findCountryByCode(String countryCode) throws CountryNotFoundException {
         Optional<Country> result = countryRepository.findById(countryCode);
@@ -33,9 +33,27 @@ public class CountryService {
         return result.get();
     }
 
-    // Hands on 7
+    // 1. Hands on 7
     @Transactional
     public void addCountry(Country country) {
         countryRepository.save(country);
+    }
+
+    // 2. Hands on 1
+    @Transactional
+    public List<Country> searchByText(String text) {
+        return countryRepository.findByNameContaining(text);
+    }
+
+    // 2. Hands on 1
+    @Transactional
+    public List<Country> searchByTextSorted(String text) {
+        return countryRepository.findByNameContainingOrderByNameAsc(text);
+    }
+
+    // 2. Hands on 1
+    @Transactional
+    public List<Country> searchByStartingLetter(String letter) {
+        return countryRepository.findByNameStartingWith(letter);
     }
 }
