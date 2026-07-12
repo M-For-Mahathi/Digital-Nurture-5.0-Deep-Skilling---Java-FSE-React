@@ -10,11 +10,16 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
+import com.spring.orm.model.Attempt;
+import com.spring.orm.model.AttemptOption;
+import com.spring.orm.model.AttemptQuestion;
 import com.spring.orm.model.Country;
 import com.spring.orm.model.Department;
 import com.spring.orm.model.Employee;
+import com.spring.orm.model.Options;
 import com.spring.orm.model.Skill;
 import com.spring.orm.model.Stock;
+import com.spring.orm.service.AttemptService;
 import com.spring.orm.service.CountryService;
 import com.spring.orm.service.DepartmentService;
 import com.spring.orm.service.EmployeeService;
@@ -38,6 +43,9 @@ public class OrmLearnApplication {
     private static DepartmentService departmentService;
     private static SkillService skillService;
 
+    // 3. Hands on 3
+    private static AttemptService attemptService;
+
     // 1. Hands on 1
     public static void main(String[] args) {
         LOGGER.info("Inside main");
@@ -50,6 +58,8 @@ public class OrmLearnApplication {
         employeeService = context.getBean(EmployeeService.class);
         departmentService = context.getBean(DepartmentService.class);
         skillService = context.getBean(SkillService.class);
+        // 3. Hands on 3
+        attemptService = context.getBean(AttemptService.class);
 
         testGetAllCountries();
 
@@ -80,6 +90,22 @@ public class OrmLearnApplication {
 
             // 2. Hands on 6
             // testAddSkillToEmployee();
+
+            // 3. Hands on 2
+            // testGetAllPermanentEmployees();
+
+            // 3. Hands on 3
+            // testGetAttemptDetail();
+
+            // 3. Hands on 4
+            // testGetAverageSalary();
+            // testGetAverageSalaryByDepartment();
+
+            // 3. Hands on 5
+            // testGetAllEmployeesNative();
+
+            // 3. Hands on 6
+            // testSearchEmployeesCriteria();
         } catch (CountryNotFoundException ex) {
             LOGGER.error("Country lookup failed", ex);
         }
@@ -172,12 +198,14 @@ public class OrmLearnApplication {
     }
 
     // 2. Hands on 4
+    // NOTE: after 3. Hands on 2 removed EAGER fetch, this method's skill/department
+    // reads will throw LazyInitializationException unless called through a fetch-join
+    // query like getAllPermanentEmployees(). Kept here for reference only.
     private static void testGetEmployee() {
         LOGGER.info("Start");
         Employee employee = employeeService.get(1);
         LOGGER.debug("Employee:{}", employee);
         LOGGER.debug("Department:{}", employee.getDepartment());
-        // 2. Hands on 6
         LOGGER.debug("Skills:{}", employee.getSkillList());
         LOGGER.info("End");
     }
@@ -212,6 +240,8 @@ public class OrmLearnApplication {
     }
 
     // 2. Hands on 5
+    // NOTE: after 3. Hands on 2 removed EAGER fetch, department.getEmployeeList()
+    // will throw LazyInitializationException here. Kept here for reference only.
     private static void testGetDepartment() {
         LOGGER.info("Start");
         Department department = departmentService.get(1);
@@ -230,6 +260,72 @@ public class OrmLearnApplication {
         employeeService.save(employee);
 
         LOGGER.debug("Employee with new skill:{}", employee.getSkillList());
+        LOGGER.info("End");
+    }
+
+    // 3. Hands on 2
+    private static void testGetAllPermanentEmployees() {
+        LOGGER.info("Start");
+        List<Employee> employees = employeeService.getAllPermanentEmployees();
+        LOGGER.debug("Permanent Employees:{}", employees);
+        employees.forEach(e -> LOGGER.debug("Skills:{}", e.getSkillList()));
+        LOGGER.info("End");
+    }
+
+    // 3. Hands on 3
+    private static void testGetAttemptDetail() {
+        LOGGER.info("Start");
+
+        Attempt attempt = attemptService.getAttempt(1, 1);
+
+        for (AttemptQuestion aq : attempt.getAttemptQuestions()) {
+            LOGGER.debug(aq.getQuestion().getText());
+
+            int selectedOptionId = -1;
+            for (AttemptOption ao : aq.getAttemptOptions()) {
+                selectedOptionId = ao.getOption().getId();
+            }
+
+            int index = 1;
+            for (Options option : aq.getQuestion().getOptions()) {
+                boolean selected = option.getId() == selectedOptionId;
+                LOGGER.debug(" {}) {}\t{}\t{}", index, option.getText(), option.getScore(), selected);
+                index++;
+            }
+        }
+
+        LOGGER.info("End");
+    }
+
+    // 3. Hands on 4
+    private static void testGetAverageSalary() {
+        LOGGER.info("Start");
+        double average = employeeService.getAverageSalary();
+        LOGGER.debug("Average salary:{}", average);
+        LOGGER.info("End");
+    }
+
+    // 3. Hands on 4
+    private static void testGetAverageSalaryByDepartment() {
+        LOGGER.info("Start");
+        double average = employeeService.getAverageSalary(1);
+        LOGGER.debug("Average salary for department 1:{}", average);
+        LOGGER.info("End");
+    }
+
+    // 3. Hands on 5
+    private static void testGetAllEmployeesNative() {
+        LOGGER.info("Start");
+        List<Employee> employees = employeeService.getAllEmployeesNative();
+        employees.forEach(e -> LOGGER.debug("Employee:{}", e));
+        LOGGER.info("End");
+    }
+
+    // 3. Hands on 6
+    private static void testSearchEmployeesCriteria() {
+        LOGGER.info("Start");
+        List<Employee> employees = employeeService.searchEmployees(1, true, 60000.0);
+        employees.forEach(e -> LOGGER.debug("Match:{}", e));
         LOGGER.info("End");
     }
 }

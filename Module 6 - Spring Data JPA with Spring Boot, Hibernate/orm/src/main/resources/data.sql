@@ -307,3 +307,41 @@ insert into employee (em_name, em_salary, em_permanent, em_date_of_birth, em_dp_
 insert into employee_skill (es_em_id, es_sk_id) values (1, 1);
 insert into employee_skill (es_em_id, es_sk_id) values (1, 2);
 insert into employee_skill (es_em_id, es_sk_id) values (2, 3);
+
+-- 3. Hands on 3
+insert into app_user (us_name) values ('Test User');
+
+insert into question (qu_text) values ('What is the extension of the hyper text markup language file?');
+insert into question (qu_text) values ('What is the maximum level of heading tag can be used in a HTML page?');
+insert into question (qu_text) values ('The HTML document itself begins with <html> and ends </html>. State True of False');
+insert into question (qu_text) values ('Choose the right option to store text value value in a variable');
+
+insert into options (op_qu_id, op_text, op_score) values (1, '.xhtm', 0.0);
+insert into options (op_qu_id, op_text, op_score) values (1, '.ht', 0.0);
+insert into options (op_qu_id, op_text, op_score) values (1, '.html', 1.0);
+insert into options (op_qu_id, op_text, op_score) values (1, '.htmx', 0.0);
+
+insert into options (op_qu_id, op_text, op_score) values (2, '5', 0.0);
+insert into options (op_qu_id, op_text, op_score) values (2, '3', 0.0);
+insert into options (op_qu_id, op_text, op_score) values (2, '4', 0.0);
+insert into options (op_qu_id, op_text, op_score) values (2, '6', 1.0);
+
+insert into options (op_qu_id, op_text, op_score) values (3, 'false', 0.0);
+insert into options (op_qu_id, op_text, op_score) values (3, 'true', 1.0);
+
+insert into options (op_qu_id, op_text, op_score) values (4, '''John''', 0.5);
+insert into options (op_qu_id, op_text, op_score) values (4, 'John', 0.0);
+insert into options (op_qu_id, op_text, op_score) values (4, '"John"', 0.5);
+insert into options (op_qu_id, op_text, op_score) values (4, '/John/', 0.0);
+
+insert into attempt (at_us_id, at_date) values (1, '2026-07-01');
+
+insert into attempt_question (aq_at_id, aq_qu_id) values (1, 1);
+insert into attempt_question (aq_at_id, aq_qu_id) values (1, 2);
+insert into attempt_question (aq_at_id, aq_qu_id) values (1, 3);
+insert into attempt_question (aq_at_id, aq_qu_id) values (1, 4);
+
+insert into attempt_option (ao_aq_id, ao_op_id) values (1, 3);
+insert into attempt_option (ao_aq_id, ao_op_id) values (2, 6);
+insert into attempt_option (ao_aq_id, ao_op_id) values (3, 10);
+insert into attempt_option (ao_aq_id, ao_op_id) values (4, 11);

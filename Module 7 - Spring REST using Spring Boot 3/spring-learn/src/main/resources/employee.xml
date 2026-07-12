@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- File 3: Create static employee list data using spring xml configuration -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+       https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="employee1" class="com.cognizant.springlearn.model.Employee">
+        <property name="id" value="1" />
+        <property name="firstName" value="John" />
+        <property name="lastName" value="Smith" />
+        <property name="department" value="Engineering" />
+    </bean>
+
+    <bean id="employee2" class="com.cognizant.springlearn.model.Employee">
+        <property name="id" value="2" />
+        <property name="firstName" value="Jane" />
+        <property name="lastName" value="Doe" />
+        <property name="department" value="Finance" />
+    </bean>
+
+    <bean id="employee3" class="com.cognizant.springlearn.model.Employee">
+        <property name="id" value="3" />
+        <property name="firstName" value="Robert" />
+        <property name="lastName" value="Brown" />
+        <property name="department" value="Human Resources" />
+    </bean>
+
+    <bean id="employee4" class="com.cognizant.springlearn.model.Employee">
+        <property name="id" value="4" />
+        <property name="firstName" value="Emily" />
+        <property name="lastName" value="Clark" />
+        <property name="department" value="Marketing" />
+    </bean>
+
+    <bean id="employeeList" class="java.util.ArrayList">
+        <constructor-arg>
+            <list>
+                <ref bean="employee1"></ref>
+                <ref bean="employee2"></ref>
+                <ref bean="employee3"></ref>
+                <ref bean="employee4"></ref>
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <!-- File 3: Create REST service for department -->
+    <bean id="department1" class="com.cognizant.springlearn.model.Department">
+        <property name="id" value="1" />
+        <property name="name" value="Engineering" />
+    </bean>
+
+    <bean id="department2" class="com.cognizant.springlearn.model.Department">
+        <property name="id" value="2" />
+        <property name="name" value="Finance" />
+    </bean>
+
+    <bean id="department3" class="com.cognizant.springlearn.model.Department">
+        <property name="id" value="3" />
+        <property name="name" value="Human Resources" />
+    </bean>
+
+    <bean id="departmentList" class="java.util.ArrayList">
+        <constructor-arg>
+            <list>
+                <ref bean="department1"></ref>
+                <ref bean="department2"></ref>
+                <ref bean="department3"></ref>
+            </list>
+        </constructor-arg>
+    </bean>
+</beans>
